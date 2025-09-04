@@ -1,0 +1,17 @@
+.about-section {
+  display: flex;
+  align-items: flex-start; /* top align text & image */
+  gap: 1rem; /* spacing between them */
+}
+
+.bio-text {
+  flex: 1; /* let text take up remaining space */
+}
+
+.graduated-pic {
+  max-width: 20rem; /* ~320px */
+  height: auto;
+  border-radius: 0.5rem;
+  border: 4px solid #4b5563; /* gray-700 */
+  transition: transform 0.3s ease;
+}

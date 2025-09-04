@@ -1,0 +1,19 @@
+/* Force Monaco IntelliSense suggestions to white text */
+.monaco-editor .suggest-widget,
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row {
+  color: white !important; /* text white */
+  background-color: #b9b9b9 !important; /* retro dark bg */
+}
+
+/* Selected item */
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused {
+  background-color: #838383 !important;
+  color: #ffffff !important; /* highlight cyan retro */
+}
+.monaco-editor .highlight {
+  color: rgb(30, 255, 206) !important; /* retro green */
+}
+
+.monaco-editor .suggest-widget {
+  color: white !important; /* description text white */
+}

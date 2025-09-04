@@ -1,0 +1,49 @@
+.resume-wrapper {
+  position: relative;
+}
+
+.resume-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.xp-window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 500px;
+  height: 400px;
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px #000;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.xp-titlebar {
+  height: 25px;
+  background: #000080;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  cursor: grab;
+}
+
+.xp-titlebar .xp-btn {
+  width: 15px;
+  height: 15px;
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.xp-content {
+  flex: 1;
+  background: white;
+  overflow: hidden;
+}
