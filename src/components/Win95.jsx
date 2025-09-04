@@ -3,6 +3,7 @@ import "./css/Win95.css";
 
 const Win95 = ({ openApps, onToggleApp }) => {
   const [startOpen, setStartOpen] = useState(false);
+  const [showBubble, setShowBubble] = useState(true);
 
   const toggleStartMenu = () => setStartOpen(!startOpen);
 
@@ -24,7 +25,7 @@ const Win95 = ({ openApps, onToggleApp }) => {
           }}
         >
           <img
-            src="./assets/win95/Start-Logo.png"
+            src="/assets/win95/Start-Logo.png"
             alt="Start Logo"
             className={`start-logo ${startOpen ? "active" : ""}`}
           />
@@ -39,7 +40,7 @@ const Win95 = ({ openApps, onToggleApp }) => {
           )}
         </div>
 
-        {/* Open apps displayed in taskbar */}
+        {}
         <div className="taskbar-apps">
           {openApps?.map((app) => (
             <button
@@ -50,6 +51,51 @@ const Win95 = ({ openApps, onToggleApp }) => {
               {app.title}
             </button>
           ))}
+        </div>
+
+        {}
+        <div className="system-tray">
+          {showBubble && (
+            <div className="tray-bubble">
+              <strong>About Me:</strong>
+              <p>
+                👋 Hi, I'm <b>Ben Florence</b>
+              </p>
+              <p>💻 Full-Stack Developer</p>
+              <p>🌏 Philippines</p>
+
+              <div className="tray-links">
+                <p>
+                  🔗{" "}
+                  <a
+                    href="https://linkedin.com/in/benzajtil"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </p>
+                <p>
+                  🐙{" "}
+                  <a
+                    href="https://github.com/benajtil"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </p>
+                <p>
+                  📧{" "}
+                  <a href="mailto:benflorence.dev@gmail.com">
+                    benflorence.dev@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              <button onClick={() => setShowBubble(false)}>×</button>
+            </div>
+          )}
         </div>
       </div>
     </section>

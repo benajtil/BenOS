@@ -132,3 +132,40 @@
   align-items: center;
   justify-content: center;
 }
+
+/* System tray bubble */
+.system-tray {
+  position: relative;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.tray-bubble {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: 220px;
+  background: #ffffe1;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: "MS Sans Serif", sans-serif;
+  font-size: 13px;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.tray-bubble strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #000080;
+}
+
+.tray-bubble button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
