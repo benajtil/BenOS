@@ -45,7 +45,7 @@ const Desktop = () => {
         className="icon-container"
         onDoubleClick={() => openApp({ id: "mario", title: "Super Mario" })}
       >
-        <img src="/ico/mario.ico" alt="Super Mario" className="icon-img" />
+        <img src="./ico/mario.ico" alt="Super Mario" className="icon-img" />
         <div className="icon-title">Super Mario</div>
       </div>
 
@@ -53,7 +53,7 @@ const Desktop = () => {
         className="icon-container"
         onDoubleClick={() => openApp({ id: "pacman", title: "Pac-Man" })}
       >
-        <img src="/ico/pacman.ico" alt="Pac-Man" className="icon-img" />
+        <img src="./ico/pacman.ico" alt="Pac-Man" className="icon-img" />
         <div className="icon-title">Pac-Man</div>
       </div>
 
@@ -61,7 +61,7 @@ const Desktop = () => {
         className="icon-container"
         onDoubleClick={() => openApp({ id: "bomberman", title: "Bomber Man" })}
       >
-        <img src="/ico/bomberman.ico" alt="Bomber Man" className="icon-img" />
+        <img src="./ico/bomberman.ico" alt="Bomber Man" className="icon-img" />
         <div className="icon-title">Bomber Man</div>
       </div>
 
@@ -72,7 +72,7 @@ const Desktop = () => {
         }
       >
         <img
-          src="/ico/mortal.ico"
+          src="./ico/mortal.ico"
           alt="Mortal Kombat II"
           className="icon-img"
         />
@@ -83,7 +83,7 @@ const Desktop = () => {
         className="icon-container"
         onDoubleClick={() => openApp({ id: "topgear", title: "Top Gear" })}
       >
-        <img src="/ico/topgear.ico" alt="Top Gear" className="icon-img" />
+        <img src="./ico/topgear.ico" alt="Top Gear" className="icon-img" />
         <div className="icon-title">Top Gear</div>
       </div>
 

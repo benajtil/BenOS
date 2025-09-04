@@ -94,7 +94,7 @@ const Resume = () => {
     <div className="icon-container">
       {/* Desktop Icon */}
       <img
-        src="/ico/Mail & Letters/Mail text.ico"
+        src="./ico/Mail & Letters/Mail text.ico"
         alt="Resume Icon"
         className="icon-img"
         onClick={toggleWindow}

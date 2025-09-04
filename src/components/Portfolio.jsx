@@ -128,7 +128,7 @@ const Portfolio = () => {
         {/* Desktop Icon */}
         <div className="desktop-icon" onDoubleClick={toggleWindow}>
           <img
-            src="/ico/Computers/My Computer.ico"
+            src="./ico/Computers/My Computer.ico"
             alt="Showcase Icon"
             className="icon-img"
           />

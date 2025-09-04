@@ -137,7 +137,7 @@ import jsLogo from "../assets/utilities/js.png";
 import photoshopLogo from "../assets/utilities/photoshop.png";
 import premierLogo from "../assets/utilities/premier.png";
 import pythonLogo from "../assets/utilities/python.png";
-import illustratorLogo from "../assets/utilities/Illustrator.png";
+import illustratorLogo from "../assets/utilities/illustrator.png";
 import ndmuLogo from "../assets/utilities/NDMU.avif";
 import lakbayImg from "../assets/projects/lakbaymarista.png";
 import customerImg from "../assets/projects/customersegmentation.png";

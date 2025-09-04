@@ -37,7 +37,7 @@ const About = () => {
           {about.bio.aboutme}
           <figure className="mt-10 mb-6">
             <img
-              src="/assets/figure1.jpg"
+              src="./assets/figure1.jpg"
               alt="not me"
               className="h-100px w-auto aspect-[16/9] object-cover transform"
             />
@@ -67,7 +67,7 @@ const About = () => {
           {/* Right side: Image */}
           <div>
             <img
-              src="/assets/BenFlorenceAjEspirituTil.jpg"
+              src="./assets/BenFlorenceAjEspirituTil.jpg"
               alt="graduated-pic"
               className="graduated-pic"
             />
@@ -84,7 +84,7 @@ const About = () => {
         <div className="flex items-start gap-10">
           {/* Left - Image */}
           <img
-            src="/assets/travel.jpg"
+            src="./assets/travel.jpg"
             alt="travel-pic"
             className="travel-pic w-1/2 aspect-9/12 object-cover"
           />

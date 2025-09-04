@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 
 const PacMan = () => {
   useEffect(() => {
-    // ✅ Set EmulatorJS config
-    window.EJS_player = "#pacman-game"; // must match the div below
-    window.EJS_core = "gba"; // use gba, not snes
+
+    window.EJS_player = "#pacman-game"; 
+    window.EJS_core = "gba"; 
     window.EJS_gameUrl = "/roms/PacMan.Collection.gba";
     window.EJS_biosUrl = "";
     window.EJS_pathtodata = "/data/";
@@ -20,7 +20,7 @@ const PacMan = () => {
 
   return (
     <div
-      id="pacman-game" // ✅ matches EJS_player
+      id="pacman-game" 
       style={{ width: "680px", height: "510px", background: "black" }}
     ></div>
   );
