@@ -1,12 +1,25 @@
-# React + Vite
+# 🖥️ BenOS – Retro Portfolio OS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BenOS is a **Windows 95–style portfolio** built with **React + Vite + Tailwind** that runs like a desktop environment inside your browser.  
+It includes draggable windows, a start menu, and even **retro games (via EmulatorJS)** like Super Mario, Pac-Man, Mortal Kombat, Top Gear, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🪟 **Desktop UI** – Icons, draggable & resizable windows, taskbar, and start menu.
+- 🎮 **Retro Games** – Play SNES/GBA classics (via EmulatorJS).
+- 📂 **Portfolio Integration** – Showcases projects, resume, and about info inside windows.
+- 🖱️ **Win95 Theme** – Full retro vibe with icons, taskbar, and start button.
+- 📡 **React + Vite** – Fast dev environment, hot reload, and easy deployment.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Installation
+
+Clone the repo:
+
+```sh
+git clone https://github.com/benajtil/BenOS.git
+cd BenOS
+```
