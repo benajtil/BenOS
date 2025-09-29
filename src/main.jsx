@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { verifyCredit } from "./creditCheck";
 
-verifyCredit();
+// verifyCredit();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

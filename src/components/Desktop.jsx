@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
 import Win95 from "./Win95";
@@ -9,10 +9,26 @@ import MortalKombat from "./games/MortalKombat";
 import TopGear from "./games/TopGear";
 import Diablo from "./games/Diablo";
 import DraggableWindow from "./DraggableWindow";
+import PopupMessage from "./PopupMessage"; // ✅ New Popup component
 import "./css/Desktop.css";
 
 const Desktop = () => {
   const [openApps, setOpenApps] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true); // Desktop disclaimer
+  const [showMobileError, setShowMobileError] = useState(true); // Mobile error
+
+  // ✅ Detect mobile screen
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // mobile threshold
+    };
+
+    handleResize(); // check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const openApp = (app) => {
     if (!openApps.find((a) => a.id === app.id)) {
@@ -34,13 +50,36 @@ const Desktop = () => {
     setOpenApps(openApps.filter((a) => a.id !== id));
   };
 
+  // 🚨 Mobile mode with popup
+  if (isMobile && showMobileError) {
+    return (
+      <PopupMessage
+        title="🚫 Not Supported"
+        onClose={() => setShowMobileError(false)}
+      >
+        <p>
+          Sorry, BenOS can only run on desktop or larger screens.
+          <br /> Please switch to a PC or laptop for the full experience.
+        </p>
+        <a
+          href="https://benajtil.github.io/cv-resume/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-link"
+        >
+          👉 View my mobile-friendly portfolio
+        </a>
+      </PopupMessage>
+    );
+  }
+
   return (
     <div className="desktop">
-      {/* Already existing icons */}
+      {/* Icons */}
       <Resume />
       <Portfolio />
 
-      {/* Retro Game Icons */}
+      {/* Games */}
       <div
         className="icon-container"
         onDoubleClick={() => openApp({ id: "mario", title: "Super Mario" })}
@@ -87,14 +126,6 @@ const Desktop = () => {
         <div className="icon-title">Top Gear</div>
       </div>
 
-      <div
-        className="icon-container"
-        onDoubleClick={() => openApp({ id: "diablo", title: "Diablo" })}
-      >
-        <img src="/ico/diablo.ico" alt="Diablo" className="icon-img" />
-        <div className="icon-title">Diablo</div>
-      </div>
-
       {/* Render Windows */}
       {openApps.map(
         (app) =>
@@ -112,8 +143,26 @@ const Desktop = () => {
               {app.id === "mortal" && <MortalKombat />}
               {app.id === "topgear" && <TopGear />}
               {app.id === "diablo" && <Diablo />}
+              {app.id === "resume" && <Resume />}
+              {app.id === "portfolio" && <Portfolio />}
             </DraggableWindow>
           )
+      )}
+
+      {/* ⚠️ Desktop Disclaimer Popup */}
+      {showDisclaimer && (
+        <PopupMessage
+          title="⚠️ Disclaimer"
+          onClose={() => setShowDisclaimer(false)}
+        >
+          <p>
+            The games in BenOS (Super Mario, Pac-Man, Bomber Man, Mortal Kombat
+            II, Top Gear, etc.) are for <b>entertainment purposes only</b>.
+            <br />
+            They were not created by me and remain the property of their
+            respective owners.
+          </p>
+        </PopupMessage>
       )}
 
       {/* Taskbar */}

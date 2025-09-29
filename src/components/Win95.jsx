@@ -91,6 +91,17 @@ const Win95 = ({ openApps, onToggleApp }) => {
                     benflorence.dev@gmail.com
                   </a>
                 </p>
+                <p>
+                  If you're not interested at this Portfolio, feel free to open
+                  my User Friendly Portfolio{" "}
+                  <a
+                    href=" https://benajtil.github.io/cv-resume/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Portfolio
+                  </a>
+                </p>
               </div>
 
               <button onClick={() => setShowBubble(false)}>×</button>

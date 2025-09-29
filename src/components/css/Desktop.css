@@ -9,6 +9,8 @@
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
+  background: #008080;
+  user-select: none;
 }
 
 .desktop .tech-logo img {
@@ -40,6 +42,51 @@
   margin-top: 20px;
 }
 
+.mobile-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 6px 18px;
+  font-family: "MS Sans Serif", sans-serif;
+  font-size: 0.95rem;
+  color: black;
+  text-decoration: none;
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  border-right-color: #404040;
+  border-bottom-color: #404040;
+  cursor: pointer;
+  box-shadow: inset -1px -1px #808080, inset 1px 1px #fff;
+}
+
+.mobile-link:active {
+  border: 2px solid #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  box-shadow: inset 1px 1px #808080, inset -1px -1px #fff;
+}
+
+.mobile-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #008080;
+  color: white;
+  font-family: "MS Sans Serif", sans-serif;
+  text-align: center;
+}
+
+.mobile-error h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.mobile-error p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 .icon-title {
   font-family: "Tahoma", sans-serif;
   font-size: 15px;
@@ -69,7 +116,9 @@
   resize: both;
   overflow: hidden;
 }
-
+.app-window .window-content {
+  user-select: text;
+}
 .window-titlebar {
   background: linear-gradient(#000080, #000060);
   color: white;

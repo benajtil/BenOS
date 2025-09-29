@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 
 const DraggableWindow = ({ id, title, onClose, onMinimize, children }) => {
   const windowRef = useRef(null);
+  const ghostRef = useRef(null);
+
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [maximized, setMaximized] = useState(false);
@@ -9,35 +11,67 @@ const DraggableWindow = ({ id, title, onClose, onMinimize, children }) => {
   const startDrag = (e) => {
     if (maximized) return;
     const rect = windowRef.current.getBoundingClientRect();
+
     setDragging(true);
     setOffset({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    document.body.style.userSelect = "none";
+
+    // Create wireframe ghost
+    const ghost = document.createElement("div");
+    ghost.className = "drag-ghost";
+    ghost.style.position = "absolute";
+    ghost.style.left = `${rect.left}px`;
+    ghost.style.top = `${rect.top}px`;
+    ghost.style.width = `${rect.width}px`;
+    ghost.style.height = `${rect.height}px`;
+    ghost.style.border = "2px dashed #000";
+    ghost.style.pointerEvents = "none";
+    ghost.style.zIndex = 9999;
+    document.body.appendChild(ghost);
+    ghostRef.current = ghost;
+
+    // 🔑 Attach global listeners
+    document.addEventListener("mousemove", onDrag);
+    document.addEventListener("mouseup", stopDrag);
   };
 
   const onDrag = (e) => {
-    if (!dragging || maximized) return;
-    windowRef.current.style.left = `${e.clientX - offset.x}px`;
-    windowRef.current.style.top = `${e.clientY - offset.y}px`;
+    if (!dragging || maximized || !ghostRef.current) return;
+    ghostRef.current.style.left = `${e.clientX - offset.x}px`;
+    ghostRef.current.style.top = `${e.clientY - offset.y}px`;
   };
 
-  const stopDrag = () => setDragging(false);
+  const stopDrag = () => {
+    if (!dragging) return;
+    setDragging(false);
+    document.body.style.userSelect = "auto";
+
+    if (ghostRef.current) {
+      windowRef.current.style.left = ghostRef.current.style.left;
+      windowRef.current.style.top = ghostRef.current.style.top;
+
+      ghostRef.current.remove();
+      ghostRef.current = null;
+    }
+
+    // 🔑 Clean up global listeners
+    document.removeEventListener("mousemove", onDrag);
+    document.removeEventListener("mouseup", stopDrag);
+  };
 
   const toggleMaximize = () => setMaximized(!maximized);
 
   const handleClose = () => {
-    // ✅ Clear canvas/audio elements
+    // Kill emulator/game if present
     const container = windowRef.current.querySelector(".window-content");
-    if (container) {
-      container.innerHTML = "";
-    }
+    if (container) container.innerHTML = "";
 
-    // ✅ Reset emulator globals
     delete window.EJS_emulator;
     delete window.EJS_player;
     delete window.EJS_gameUrl;
 
     onClose(id);
 
-    // 🔁 Reload tab if it's a game window
     if (
       ["mario", "pacman", "bomberman", "mortal", "topgear", "diablo"].includes(
         id

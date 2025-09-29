@@ -109,8 +109,8 @@ const Resume = () => {
           style={{
             left: "100px",
             top: "50px",
-            width: "600px",
-            height: "400px",
+            width: "80vh",
+            height: "100vh",
             position: "absolute",
           }}
         >

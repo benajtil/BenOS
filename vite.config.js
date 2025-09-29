@@ -13,5 +13,5 @@ export default defineConfig({
       mozjpeg: { quality: 80 },
     }),
   ],
-  base: "/BenOS/",
+  base: "/",
 });
