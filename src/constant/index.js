@@ -142,6 +142,7 @@ import ndmuLogo from "../assets/utilities/NDMU.avif";
 import lakbayImg from "../assets/projects/lakbaymarista.png";
 import customerImg from "../assets/projects/customersegmentation.png";
 import no404 from "../assets/projects/404.png";
+import komuImg from "../assets/projects/komu.png";
 
 const logos = [
   animateLogo,
@@ -251,21 +252,6 @@ const projects = [
   },
   {
     type: "Web Development",
-    title: "Customer Segmentation",
-    description:
-      "Developed as part of our Thesis at Notre Dame of Marbel University, this PHP‑powered web application delivers a comprehensive, responsive admin dashboard that lets you drill into every table and record—customers, orders, products, users—and filter, sort, search, or export on demand; it also displays real‑time site metrics such as total customers, sales, and active sessions, while providing full user administration to create, edit, or revoke access for any number of admin or staff accounts. Beyond the LAMP‑stack front end, the repository includes a Python module built on pandas and scikit‑learn that preprocesses raw transaction data and applies the DBSCAN algorithm—using both RFM and LRFMP feature sets—to uncover natural customer clusters, which can then be visualized or fed back into the PHP dashboard for targeted marketing campaigns. Although the system has been discontinued following our successful thesis defense, it remains a complete full‑stack illustration of how to integrate a classic PHP/MySQL dashboard with a modern data‑science backend for real‑world customer‑segmentation workflows.",
-    url: {
-      github:
-        "https://github.com/benajtil/Customer-Segmentation-in-Online-Retail-using-DBSCANS.git",
-      live: "",
-    },
-    image: customerImg,
-    languages: ["PHP", "HTML", "CSS", "JAVASCRIPT", "PYTHON", "MySQL"],
-
-    live: false,
-  },
-  {
-    type: "Web Development",
     title: "Tabulation System",
     description:
       "The Tnalak Festival Tabulation System is a PHP‑based web application designed to manage and score entries in both the Float Competition and Civic Competition. It supports local data storage via SQLite for offline use and central synchronization with MySQL for permanent record‑keeping. Administrators can log in to manage contestants, judges, and scoring criteria, then generate printed score sheets and final ranking reports.",
@@ -278,6 +264,36 @@ const projects = [
 
     live: false,
   },
+  {
+    type: "Web Development",
+    title: "KOMU",
+    description:
+      "KOMU is a localized community platform designed to connect residents and barangay administrators through a centralized digital space. The platform provides role-based access for residents, barangay administrators, municipal administrators, and system administrators, allowing communities to publish announcements, interact with local content, submit reports, and manage barangay-specific information. The project was designed around the idea of giving each barangay its own dedicated digital community while maintaining centralized administration and access control.",
+    url: {
+      github: "https://github.com/benajtil/Komu_Web",
+      live: false,
+    },
+    image: komuImg,
+    languages: ["React", "JavaScript", "FastAPI", "PostgreSQL"],
+    live: true,
+  },
+
+  {
+    type: "Data Science",
+    title: "Customer Segmentation",
+    description:
+      "A customer segmentation system developed as part of a thesis project at Notre Dame of Marbel University. The application combines a PHP/MySQL administrative dashboard with a Python data-science module using pandas and scikit-learn. Transaction data is processed using RFM and LRFMP feature sets before applying DBSCAN clustering to identify natural customer groups. The resulting segments can be analyzed to support targeted marketing strategies and better understand customer purchasing behavior.",
+    url: {
+      github:
+        "https://github.com/benajtil/Customer-Segmentation-in-Online-Retail-using-DBSCANS.git",
+      live: "",
+    },
+    image: customerImg,
+    languages: ["PHP", "Python", "JavaScript", "MySQL", "Pandas", "Scikit-learn"],
+    live: false,
+  },
+
+
 ];
 export {
   person,

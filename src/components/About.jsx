@@ -160,6 +160,12 @@ const About = () => {
             life. That’s when I decided to reimagine my portfolio using the
             Windows 95 aesthetic, blending modern development practices with a
             classic retro concept.
+            <p>
+              This is my Pixel Portfolio, a personal project that I built to showcase my skills and creativity. You can check it out live at{" "}
+              <a href="https://benflorence.live/" className="text-blue-500 underline">
+                https://benflorence.live/
+              </a>
+            </p>
           </p>
         </div>
       </div>

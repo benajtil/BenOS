@@ -32,24 +32,40 @@ const Project = () => {
             <div
               key={index}
               onClick={() => setSelectedProject(project)}
-              className="border border-black p-6 bg-gray-50 shadow-md cursor-pointer hover:bg-gray-100"
+              className="border border-black bg-gray-50 shadow-md cursor-pointer hover:bg-gray-100 overflow-hidden"
             >
-              <h3 className="text-2xl font-bold">{project.title}</h3>
-              <p className="text-gray-700">{project.description}</p>
-
-              {/* Languages/Tools */}
-              {project.languages && (
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {project.languages.map((lang, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 border border-gray-400 text-sm font-mono"
-                    >
-                      {lang}
-                    </span>
-                  ))}
+              {/* Project Preview Image */}
+              {project.image && (
+                <div className="w-full h-64 border-b border-black overflow-hidden bg-gray-200">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               )}
+
+              <div className="p-6">
+                <h3 className="text-2xl font-bold">{project.title}</h3>
+
+                <p className="text-gray-700 mt-2">
+                  {project.description}
+                </p>
+
+                {/* Languages/Tools */}
+                {project.languages && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.languages.map((lang, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 border border-gray-400 text-sm font-mono"
+                      >
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
